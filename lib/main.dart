@@ -489,8 +489,8 @@ class CalculatorScreen extends StatelessWidget {
   calculationMethod() {
     double number1;
     double number2 = 0.0;
-    List myList = enteredText.split(RegExp(r"[x/+-]"));
-    List operatorList = enteredText.split(RegExp("[0-9]"));
+    List myList = enteredText.split(RegExp(r"[x/+-]"));  // Number List like 1.2,6,5.15
+    List operatorList = enteredText.split(RegExp("[0-9]")); // Operator List like +,-,/,*
     List newList=[];
     for(int j = 0; j < operatorList.length; j++){
       if(operatorList[j]!="" && operatorList[j]!="." ){
@@ -531,3 +531,43 @@ class CalculatorScreen extends StatelessWidget {
   }
 
 }
+
+/** Other Way to use Calculation */
+
+// double number1;
+// double number2 = 0.0;
+// List myList = enteredText.split(RegExp(r"[x/+-]"));  
+// List operatorList = enteredText.split(RegExp("[0.0-9]"));
+// operatorList.removeWhere((item)=>item=='');
+// number2=double.parse(myList[0]);
+//     for (int i = 1; i < myList.length; i++) {
+//       number1 = double.parse(myList[i]);
+//       switch (operatorList[0]) {
+//         case '+':
+//           {
+//             number2 += number1;
+//             operatorList.removeAt(0);
+//             break;
+//           }
+//         case '-':
+//           {
+//             number2 -= number1;
+//             operatorList.removeAt(0);
+//             break;
+//           }
+//         case 'x':
+//           {
+//             number2 *= number1;
+//             operatorList.removeAt(0);
+//             break;
+//           }
+//         case '/':
+//           {
+//             number2 /= number1;
+//             operatorList.removeAt(0);
+//             break;
+//           }
+//       }
+//     }
+//     result.value = number2.toPrecision(5);
+//   }
